@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,9 @@ namespace Mvi.Wpf
 {
     public class SerialPortController : INotifyPropertyChanged
     {
-        private int myStxIndex { get; set; }
-        private int myEtxIndex { get; set; }
-        private int myRemoveDataCount { get; set; }
+        public int Count { get; set; } = 0;
+        public double TotalTime { get; set; }
+        public Stopwatch Stopwatch { get; set; }
 
         private List<byte> myTempData;
         public SerialPortCommNode SerialPortCommNode { get; private set; }
@@ -24,6 +25,7 @@ namespace Mvi.Wpf
 
         public SerialPortController()
         {
+            Stopwatch = new Stopwatch();
             myTempData = new List<byte>();
             SerialPortCommNode = new SerialPortCommNode
             {
@@ -51,7 +53,14 @@ namespace Mvi.Wpf
                     if (readBytes != null)
                     {
                         myTempData.AddRange(readBytes);
+
+                        Stopwatch.Restart();
                         CheckDataAsync();
+                        Stopwatch.Stop();
+
+                        TotalTime += Stopwatch.Elapsed.TotalMilliseconds;
+                        Count++;
+                        Console.WriteLine((Math.Round(TotalTime / Count, 3)));
                     }
 
                     Task.Delay(10).Wait();
@@ -72,25 +81,21 @@ namespace Mvi.Wpf
                         if (myTempData.IndexOf(3) != -1)
                         {
                             var lastIndex = myTempData.LastIndexOf(myTempData.Last());
+                            var etxIndex = myTempData.IndexOf(3);
+                            var removeDataCount = lastIndex - etxIndex + 1;
 
-                            myEtxIndex = myTempData.IndexOf(3);
-                            myRemoveDataCount = lastIndex - myEtxIndex + 1;
-                            myTempData.RemoveRange(myEtxIndex, myRemoveDataCount);
+                            myTempData.RemoveRange(etxIndex, removeDataCount);
 
-                            myStxIndex = myTempData.LastIndexOf(2);
-                            myTempData.RemoveRange(0,myStxIndex);
-                            
+                            var stxIndex = myTempData.LastIndexOf(first);
+                            myTempData.RemoveRange(0, stxIndex);
+
                             ReceiveData?.Invoke(this, myTempData.ToArray());
                             myTempData.Clear();
                         }
                     }
-                    else
+                    else if (myTempData.IndexOf(2) != -1)
                     {
-                        if (myTempData.IndexOf(2) != -1)
-                        {
-                            myStxIndex = myTempData.IndexOf(2);
-                            myTempData.RemoveRange(0, myStxIndex );
-                        }
+                        myTempData.RemoveRange(0, myTempData.IndexOf(2));
                     }
                 }
             });
