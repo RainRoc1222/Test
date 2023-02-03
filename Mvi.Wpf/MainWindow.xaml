@@ -71,7 +71,7 @@
              
             </WrapPanel>
         </GroupBox>
-        <GroupBox Grid.Row="1" Margin="5">
+        <GroupBox Grid.Row="1" Margin="5" Header="ReceiveData Information">
             <StackPanel>
                 <WrapPanel>
                     <TextBlock Text="OK : "/>

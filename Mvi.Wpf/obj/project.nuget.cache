@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TkNRm5I6Nkz0GNLuhxwPA42p2nL7aB/WjCw5LaFz9DtXNU3zoerAMPlBn7aqSP+8TOrLu9lzkHKlo8QLfkAhSQ==",
+  "dgSpecHash": "hYwF/L1FbR4iDgdr2nEFjtpmbaSTCfCxEwSiyKukA2eJoHOYfTeKvPbHsQViWGgqX3GGOqzLK0kaRJekAUvF2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj",
+  "projectFilePath": "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\Mvi232.Wpf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\fody\\4.2.1\\fody.4.2.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\gluenet.communication.core\\1.0.1\\gluenet.communication.core.1.0.1.nupkg.sha512",

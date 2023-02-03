@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj": {}
+    "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\Mvi232.Wpf.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj": {
+    "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\Mvi232.Wpf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\Mvi232.Wpf.csproj",
         "projectName": "Mvi.Wpf",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj",
+        "projectPath": "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\Mvi232.Wpf.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\obj\\",
+        "outputPath": "C:\\Users\\USER\\source\\repos\\Mvi323_Controller\\Mvi.Wpf\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

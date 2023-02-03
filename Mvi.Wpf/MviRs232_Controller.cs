@@ -46,9 +46,6 @@ namespace Mvi.Wpf
 
                 default:
                     NGCount++;
-                    data.ToList().ForEach(x => Console.WriteLine(x));
-                    Console.WriteLine("==========================================");
-                    Console.WriteLine(data.Length);
                     break;
             }
         }

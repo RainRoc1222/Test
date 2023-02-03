@@ -80,25 +80,29 @@ namespace Mvi.Wpf
                     {
                         if (myTempData.IndexOf(3) != -1)
                         {
-                            var lastIndex = myTempData.LastIndexOf(myTempData.Last());
-                            var etxIndex = myTempData.IndexOf(3);
-                            var removeDataCount = lastIndex - etxIndex + 1;
-
-                            myTempData.RemoveRange(etxIndex, removeDataCount);
-
-                            var stxIndex = myTempData.LastIndexOf(first);
-                            myTempData.RemoveRange(0, stxIndex);
-
-                            ReceiveData?.Invoke(this, myTempData.ToArray());
-                            myTempData.Clear();
+                            FilterData(myTempData.LastIndexOf(first) + 1);
                         }
                     }
-                    else if (myTempData.IndexOf(2) != -1)
+                    else
                     {
-                        myTempData.RemoveRange(0, myTempData.IndexOf(2));
+                        if (myTempData.IndexOf(2) != -1)
+                        {
+                            FilterData(myTempData.IndexOf(2) + 1);
+                        }
                     }
                 }
             });
+        }
+
+        private void FilterData(int count)
+        {
+            myTempData.RemoveRange(0, count);
+
+            var lastIndex = myTempData.LastIndexOf(myTempData.Last());
+            myTempData.RemoveRange(myTempData.IndexOf(3), lastIndex - myTempData.IndexOf(3) + 1);
+
+            ReceiveData?.Invoke(this, myTempData.ToArray());
+            myTempData.Clear();
         }
 
 
