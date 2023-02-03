@@ -1,0 +1,88 @@
+﻿<Window x:Class="Mvi.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mvi.Wpf"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="MeasureReuslt" Margin="5">
+            <WrapPanel>
+                <StackPanel>
+                    <TextBlock Text="PosNo :"/>
+                    <TextBlock Text="TCS :"/>
+                    <TextBlock Text="Diameter :"/>
+                    <TextBlock Text="Weight :"/>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Width" Value="50"/>
+                            <Setter Property="TextAlignment" Value="Center"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="{Binding MviRs232_Controller.MeasureReuslt.PosNo}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.MeasureReuslt.TCS}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.MeasureReuslt.Diameter}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.MeasureReuslt.Weight}"/>
+                </StackPanel>
+            </WrapPanel>
+        </GroupBox>
+        <GroupBox Header="LevelResult" Grid.Column="1" Margin="5">
+            <WrapPanel>
+                <StackPanel>
+                    <TextBlock Text="D :"/>
+                    <TextBlock Text="C :"/>
+                    <TextBlock Text="Bs :"/>
+                    <TextBlock Text="B :"/>
+                    <TextBlock Text="AN :"/>
+                    <TextBlock Text="AM :"/>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Width" Value="50"/>
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="Foreground" Value="Red"/>
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="True">
+                                    <Setter Property="Foreground" Value="Green"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.D}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.C}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.Bs}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.B}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.AN}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.LevelResult.AM}"/>
+                </StackPanel>
+             
+            </WrapPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Margin="5">
+            <StackPanel>
+                <WrapPanel>
+                    <TextBlock Text="OK : "/>
+                    <TextBlock Text="{Binding MviRs232_Controller.OKCount}"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="NG : "/>
+                    <TextBlock Text="{Binding MviRs232_Controller.NGCount}"/>
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+        <Button Grid.Column="1" Grid.Row="1" Content="Reset" Click="Button_Click"/>
+    </Grid>
+</Window>
