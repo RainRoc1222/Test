@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "TkNRm5I6Nkz0GNLuhxwPA42p2nL7aB/WjCw5LaFz9DtXNU3zoerAMPlBn7aqSP+8TOrLu9lzkHKlo8QLfkAhSQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi232.Wpf.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\fody\\4.2.1\\fody.4.2.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\gluenet.communication.core\\1.0.1\\gluenet.communication.core.1.0.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\godsharp.serialport\\1.2.0.6\\godsharp.serialport.1.2.0.6.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\propertychanged.fody\\2.6.1\\propertychanged.fody.2.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}

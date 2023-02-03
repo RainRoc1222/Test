@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi.Wpf.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi.Wpf.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi.Wpf.csproj",
+        "projectName": "Mvi.Wpf",
+        "projectPath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\Mvi.Wpf.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\source\\repos\\ASCII_Console\\Mvi.Wpf\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\專案管理\\Custom\\GlueNet.MMM.AutoWeighing\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "GlueNet.Communication.Core": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.7.1, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[2.6.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
