@@ -9,11 +9,10 @@ namespace Mvi.Wpf
     public class MviParser
     {
         // input => 32長度
-        public  MeasureReuslt MeasureParse(string input)
+        public MeasureReuslt MeasureParse(string input)
         {
             var inputList = input.Split(',').ToList();
             inputList.Remove(inputList.First());
-            inputList.Remove(inputList.Last());
 
             var data = inputList.ConvertAll(Convert.ToInt32);
             MeasureReuslt result = new MeasureReuslt()
@@ -28,15 +27,16 @@ namespace Mvi.Wpf
         }
 
         // input => 13長度
-        public  LevelResult LevelParse(string input)
+        public LevelResult LevelParse(string input)
         {
             var last = Convert.ToInt32(input.Split(',').Last());
             var data = Convert.ToString(last, 2).ToCharArray().Reverse().Take(8).ToList();
-           
+
             if (data.Count() == 1)
             {
                 return new LevelResult();
             }
+
             LevelResult result = new LevelResult()
             {
                 AM = data[0] == '1',

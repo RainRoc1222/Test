@@ -36,8 +36,8 @@ namespace Mvi.Wpf
         {
             MviRs232_Controller.MeasureReuslt = new MeasureReuslt();
             MviRs232_Controller.LevelResult = new LevelResult();
-            MviRs232_Controller.OKCount = 0;
-            MviRs232_Controller.NGCount = 0;
+            MviRs232_Controller.OkCount = 0;
+            MviRs232_Controller.NgCount = 0;
         }
     }
 }

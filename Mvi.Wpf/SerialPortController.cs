@@ -12,9 +12,6 @@ namespace Mvi.Wpf
 {
     public class SerialPortController : INotifyPropertyChanged
     {
-        public int Count { get; set; } = 0;
-        public double TotalTime { get; set; }
-        public Stopwatch Stopwatch { get; set; }
 
         private List<byte> myTempData;
         public SerialPortCommNode SerialPortCommNode { get; private set; }
@@ -25,7 +22,6 @@ namespace Mvi.Wpf
 
         public SerialPortController()
         {
-            Stopwatch = new Stopwatch();
             myTempData = new List<byte>();
             SerialPortCommNode = new SerialPortCommNode
             {
@@ -53,14 +49,7 @@ namespace Mvi.Wpf
                     if (readBytes != null)
                     {
                         myTempData.AddRange(readBytes);
-
-                        Stopwatch.Restart();
                         CheckDataAsync();
-                        Stopwatch.Stop();
-
-                        TotalTime += Stopwatch.Elapsed.TotalMilliseconds;
-                        Count++;
-                        Console.WriteLine((Math.Round(TotalTime / Count, 3)));
                     }
 
                     Task.Delay(10).Wait();
@@ -109,10 +98,6 @@ namespace Mvi.Wpf
         private void Write(byte[] sendData)
         {
             SerialPortCommNode.SerialPort.Write(sendData);
-        }
-        public void Print()
-        {
-            Write(new byte[] { 0x50, 0x52, 0x49, 0x4E, 0x54, 0x0D, 0x0A });
         }
     }
 }

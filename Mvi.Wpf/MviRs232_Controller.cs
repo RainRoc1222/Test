@@ -13,8 +13,8 @@ namespace Mvi.Wpf
         public MviParser MviParser { get; set; }
         public MeasureReuslt MeasureReuslt { get; set; }
         public LevelResult LevelResult { get; set; }
-        public int OKCount { get; set; }
-        public int NGCount { get; set; }
+        public int OkCount { get; set; }
+        public int NgCount { get; set; }
 
         public MviRs232_Controller()
         {
@@ -36,16 +36,16 @@ namespace Mvi.Wpf
             {
                 case 32:
                     MeasureReuslt = MviParser.MeasureParse(input);
-                    OKCount++;
+                    OkCount++;
                     break;
 
                 case 13:
                     LevelResult = MviParser.LevelParse(input);
-                    OKCount++;
+                    OkCount++;
                     break;
 
                 default:
-                    NGCount++;
+                    NgCount++;
                     break;
             }
         }

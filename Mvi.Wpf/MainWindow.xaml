@@ -75,11 +75,11 @@
             <StackPanel>
                 <WrapPanel>
                     <TextBlock Text="OK : "/>
-                    <TextBlock Text="{Binding MviRs232_Controller.OKCount}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.OkCount}"/>
                 </WrapPanel>
                 <WrapPanel>
                     <TextBlock Text="NG : "/>
-                    <TextBlock Text="{Binding MviRs232_Controller.NGCount}"/>
+                    <TextBlock Text="{Binding MviRs232_Controller.NgCount}"/>
                 </WrapPanel>
             </StackPanel>
         </GroupBox>
